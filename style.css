@@ -803,93 +803,176 @@ a:visited {
     color: #9bbfff
 }
 
-.blog-inline-emphasis {
-    color: #ffdc73;
-    font-weight: 800;
+/* ==================================================
+   Blog component samples: speech, comparison, pros-cons, checklist
+   Added section only. Existing rules are unchanged.
+   ================================================== */
+.blog-ui-samples {
+    margin-top: 42px
 }
-
-.blog-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    font-family: sans-serif;
+.blog-ui-samples > h2 {
+    margin-top: 0
 }
-
-.blog-balloon {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    margin: 20px 0;
+.blog-ui-sample {
+    margin: 28px 0
 }
-
-.blog-balloon-icon {
-    width: 48px;
-    height: 48px;
+.blog-ui-sample-title {
+    margin: 0 0 14px !important;
+    color: #c8d9ff
+}
+.blog-speech {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 14px;
+    align-items: start;
+    margin: 20px 0
+}
+.blog-speech-avatar {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(155, 191, 255, .45);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #eee;
+    color: #fff;
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    font-weight: 800
 }
-
-.blog-balloon-content {
-    flex: 1;
-    padding: 14px 18px;
+.blog-speech-body {
+    position: relative;
+    padding: 16px 18px;
+    border: 1px solid rgba(155, 191, 255, .35);
     border-radius: 16px;
-    background: #f5f5f5;
-    border: 1px solid #ddd;
+    background: rgba(76, 127, 255, .11)
 }
-
+.blog-speech-body:before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: -8px;
+    width: 14px;
+    height: 14px;
+    border-left: 1px solid rgba(155, 191, 255, .35);
+    border-bottom: 1px solid rgba(155, 191, 255, .35);
+    background: #101a35;
+    transform: rotate(45deg)
+}
+.blog-speech-body p {
+    position: relative;
+    margin: 0
+}
+.blog-table-wrap {
+    overflow-x: auto;
+    margin: 20px 0;
+    border: 1px solid var(--line);
+    border-radius: 16px
+}
+.blog-comparison-table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, .04)
+}
+.blog-comparison-table th,
+.blog-comparison-table td {
+    padding: 14px 16px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top
+}
+.blog-comparison-table th:last-child,
+.blog-comparison-table td:last-child {
+    border-right: 0
+}
+.blog-comparison-table tr:last-child td {
+    border-bottom: 0
+}
+.blog-comparison-table thead th {
+    color: #fff;
+    background: linear-gradient(135deg, rgba(76, 127, 255, .28), rgba(124, 58, 237, .28))
+}
+.blog-comparison-table tbody th {
+    color: #c8d9ff;
+    background: rgba(155, 191, 255, .08)
+}
 .blog-pros-cons {
     display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
-    margin: 24px 0;
+    margin: 20px 0
 }
-
-.blog-pros {
-    padding: 18px;
-    border-radius: 16px;
-    background: rgba(6, 199, 85, .12);
-    border-left: 4px solid #06c755;
-}
-
+.blog-pros,
 .blog-cons {
-    padding: 18px;
-    border-radius: 16px;
-    background: rgba(255, 80, 80, .10);
-    border-left: 4px solid #ff6464;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 16px
 }
-
+.blog-pros {
+    border-color: rgba(93, 228, 170, .38);
+    background: rgba(93, 228, 170, .09)
+}
+.blog-cons {
+    border-color: rgba(255, 139, 139, .38);
+    background: rgba(255, 139, 139, .09)
+}
+.blog-pros h4,
+.blog-cons h4 {
+    margin: 0 0 10px;
+    font-size: 1.05rem
+}
+.blog-pros h4 {
+    color: #79efbd
+}
+.blog-cons h4 {
+    color: #ffabab
+}
+.blog-pros ul,
+.blog-cons ul {
+    margin: 0;
+    padding-left: 1.3em
+}
 .blog-checklist {
-    list-style: none;
-    padding: 0;
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 0 !important;
+    list-style: none
 }
-
 .blog-checklist li {
-    padding: 12px 14px;
-    margin-bottom: 8px;
-    background: #f5f5f5;
-    border-radius: 12px;
+    position: relative;
+    margin: 0 !important;
+    padding: 13px 15px 13px 46px;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, .05)
 }
-
 .blog-checklist li:before {
-    content: "✓ ";
-    color: #06c755;
-    font-weight: bold;
+    content: "✓";
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
+    color: #07140f;
+    background: #5de4aa;
+    font-size: .85rem;
+    font-weight: 900
 }
-
-.blog-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 24px 0;
-}
-
-.blog-table th,
-.blog-table td {
-    padding: 12px 14px;
-    border: 1px solid #ccc;
-}
-
-.blog-table th {
-    background: #dfe8ff;
+@media(max-width:620px) {
+    .blog-pros-cons {
+        grid-template-columns: 1fr
+    }
+    .blog-speech {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 11px
+    }
+    .blog-speech-avatar {
+        width: 42px;
+        height: 42px;
+        font-size: .85rem
+    }
 }
