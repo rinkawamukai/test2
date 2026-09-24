@@ -1,75 +1,179 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="集中、記録、復習をひとつにまとめたローカル学習ダッシュボード" />
-  <title>Study Desk | 学習ダッシュボード</title>
+  <meta name="description" content="WEB技術学習用" />
+  <title>ダッシュボード</title>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
   <div class="noise"></div>
   <header class="topbar">
-    <a class="brand" href="#home" aria-label="Study Desk ホーム"><span>SD</span><strong>STUDY DESK</strong></a>
-    <div class="top-actions"><span id="today"></span><button id="themeBtn" class="icon-btn" aria-label="テーマ切替">◐</button></div>
+    <a class="brand" href="#home"><span>川</span><strong>学習用ページ</strong></a>
+    <div class="top-actions"><span id="today"></span><button id="themeBtn" class="icon-btn"
+        aria-label="テーマ切替">◐</button></div>
   </header>
 
   <div class="app-shell">
     <aside class="sidebar" aria-label="メインメニュー">
-      <p class="eyebrow">WORKSPACE</p>
+      <p class="eyebrow">MENU</p>
       <nav>
         <button class="nav-item active" data-view="home"><span>⌂</span>ホーム</button>
         <button class="nav-item" data-view="stopwatch"><span>◷</span>ストップウォッチ</button>
         <button class="nav-item" data-view="knowledge"><span>▤</span>ナレッジ</button>
         <button class="nav-item" data-view="calculator"><span>＋</span>計算機</button>
-        <button class="nav-item" data-view="focus"><span>◎</span>集中タイマー</button>
+        <button class="nav-item" data-view="focus"><span>◎</span>タイマー</button>
       </nav>
-      <div class="sidebar-note"><b>今日のひとこと</b><p>完璧な一日より、再開できる仕組み。</p></div>
+      <div class="sidebar-note"><b>ここに略歴とか</b>
+        <p>書くとソレっぽい。</p>
+      </div>
     </aside>
 
     <main>
       <section id="home" class="view active">
         <div class="hero">
-          <div><p class="eyebrow">GOOD STUDY, GOOD DAY.</p><h1>学ぶための、<br><em>静かな作業台。</em></h1><p>時間を測る。知識を集める。計算する。集中する。<br>余計な機能を削り、学習の流れだけを残しました。</p></div>
+          <div>
+            <p class="eyebrow">Kawamukai.</p>
+            <h1>学習用の<br><em>ページです</em></h1>
+            <p>HTML,CSS,JSの学習のため作成された、テスト用のページ</p>
+          </div>
           <div class="hero-clock"><span id="clock">00:00</span><small id="dayProgress">TODAY</small></div>
         </div>
-        <div class="section-head"><div><p class="eyebrow">QUICK START</p><h2>何から始めますか？</h2></div></div>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">QUICK START</p>
+            <h2>やりたいことを選択</h2>
+          </div>
+        </div>
         <div class="feature-grid">
-          <button class="feature-card coral" data-go="stopwatch"><span class="num">01</span><div class="card-icon">◷</div><h3>時間を記録</h3><p>ラップ付きストップウォッチ</p><b>OPEN →</b></button>
-          <button class="feature-card yellow" data-go="knowledge"><span class="num">02</span><div class="card-icon">▤</div><h3>知識を探す</h3><p>TXTを読み込み、横断検索</p><b>OPEN →</b></button>
-          <button class="feature-card blue" data-go="calculator"><span class="num">03</span><div class="card-icon">＋</div><h3>すぐ計算</h3><p>履歴が残るシンプル計算機</p><b>OPEN →</b></button>
-          <button class="feature-card green" data-go="focus"><span class="num">04</span><div class="card-icon">◎</div><h3>集中する</h3><p>25分集中と短い休憩</p><b>OPEN →</b></button>
+          <button class="feature-card coral" data-go="stopwatch"><span class="num">01</span>
+            <div class="card-icon">◷</div>
+            <h3>時間を記録</h3>
+            <p>ラップ付きストップウォッチ</p><b>OPEN →</b>
+          </button>
+          <button class="feature-card yellow" data-go="knowledge"><span class="num">02</span>
+            <div class="card-icon">▤</div>
+            <h3>ナレッジを見る</h3>
+            <p>TXTを読み込み、見やすく表示</p><b>OPEN →</b>
+          </button>
+          <button class="feature-card blue" data-go="calculator"><span class="num">03</span>
+            <div class="card-icon">＋</div>
+            <h3>計算機</h3>
+            <p>シンプル計算機</p><b>OPEN →</b>
+          </button>
+          <button class="feature-card green" data-go="focus"><span class="num">04</span>
+            <div class="card-icon">◎</div>
+            <h3>タイマー</h3>
+            <p>お手軽なタイマー</p><b>OPEN →</b>
+          </button>
         </div>
         <div class="home-bottom">
-          <div class="panel"><div class="panel-title"><h3>今日のタスク</h3><span id="taskCount">0 / 0</span></div><form id="taskForm"><input id="taskInput" placeholder="学習タスクを追加…" autocomplete="off"><button>追加</button></form><ul id="taskList" class="task-list"></ul></div>
-          <div class="panel stat-panel"><p class="eyebrow">FOCUS SCORE</p><strong id="focusScore">0</strong><span>完了セッション</span><div class="progress"><i id="scoreBar"></i></div><small>まずは1セッション、25分から。</small></div>
+          <div class="panel">
+            <div class="panel-title">
+              <h3>今日のタスク</h3><span id="taskCount">0 / 0</span>
+            </div>
+            <form id="taskForm"><input id="taskInput" placeholder="タスクを追加…" autocomplete="off"><button>追加</button>
+            </form>
+            <ul id="taskList" class="task-list"></ul>
+          </div>
+          <div class="panel stat-panel">
+            <p class="eyebrow">FOCUS SCORE</p><strong id="focusScore">0</strong><span>完了セッション</span>
+            <div class="progress"><i id="scoreBar"></i></div><small>タスク進捗バー</small>
+          </div>
         </div>
       </section>
 
       <section id="stopwatch" class="view tool-view">
-        <div class="tool-heading"><p class="eyebrow">TIME TRACKER</p><h1>ストップウォッチ</h1><p>学習時間をラップで区切って記録します。</p></div>
-        <div class="timer-layout"><div class="timer-card"><div id="swDisplay" class="timer-display">00:00<span>.00</span></div><div class="button-row"><button id="swStart" class="primary">スタート</button><button id="swLap">ラップ</button><button id="swReset">リセット</button></div></div><div class="panel lap-panel"><div class="panel-title"><h3>ラップ</h3><button id="clearLaps" class="text-btn">消去</button></div><ol id="lapList" class="lap-list"><li class="empty">記録はまだありません</li></ol></div></div>
+        <div class="tool-heading">
+          <p class="eyebrow">TIME TRACKER</p>
+          <h1>ストップウォッチ</h1>
+          <p>ラップで区切って時間を記録</p>
+        </div>
+        <div class="timer-layout">
+          <div class="timer-card">
+            <div id="swDisplay" class="timer-display">00:00<span>.00</span></div>
+            <div class="button-row"><button id="swStart" class="primary">スタート</button><button
+                id="swLap">ラップ</button><button id="swReset">リセット</button></div>
+          </div>
+          <div class="panel lap-panel">
+            <div class="panel-title">
+              <h3>ラップ</h3><button id="clearLaps" class="text-btn">リセット</button>
+            </div>
+            <ol id="lapList" class="lap-list">
+              <li class="empty">記録はまだありません</li>
+            </ol>
+          </div>
+        </div>
       </section>
 
       <section id="knowledge" class="view tool-view">
-        <div class="tool-heading"><p class="eyebrow">KNOWLEDGE BASE</p><h1>ナレッジ一覧</h1><p>同梱の knowledge フォルダ、または選択したフォルダ内のTXTを読み込みます。</p></div>
-        <div class="knowledge-tools"><label class="search"><span>⌕</span><input id="knowledgeSearch" placeholder="タイトル・本文を検索"></label><button id="selectFolder" class="primary">フォルダを選択</button><button id="loadDemo">同梱データ</button></div>
-        <div class="notice" id="knowledgeNotice">同梱データはローカルサーバー起動時に読み込めます。フォルダ選択はChrome / Edge推奨です。</div>
-        <div class="knowledge-layout"><div id="knowledgeList" class="knowledge-list"></div><article id="knowledgeBody" class="knowledge-body"><div class="empty-state"><b>▤</b><h3>ナレッジを選択</h3><p>左の一覧からTXTファイルを開いてください。</p></div></article></div>
+        <div class="tool-heading">
+          <p class="eyebrow">KNOWLEDGE</p>
+          <h1>ナレッジ一覧</h1>
+          <p>サーバーのknowledgeフォルダ、または選択したフォルダ内のTXTファイルを読み込む</p>
+        </div>
+        <div class="knowledge-tools"><label class="search"><span>⌕</span><input id="knowledgeSearch"
+              placeholder="タイトル・本文を検索"></label><button id="selectFolder" class="primary">フォルダを選択</button><button
+            id="loadDemo">knowledgeフォルダ</button></div>
+        <div class="notice" id="knowledgeNotice">knowledgeフォルダはサーバー起動時に読み込めます。</div>
+        <div class="knowledge-layout">
+          <div id="knowledgeList" class="knowledge-list"></div>
+          <article id="knowledgeBody" class="knowledge-body">
+            <div class="empty-state"><b>▤</b>
+              <h3>ナレッジを選択</h3>
+              <p>左の一覧からTXTファイルを開いてください。</p>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section id="calculator" class="view tool-view">
-        <div class="tool-heading"><p class="eyebrow">QUICK CALC</p><h1>計算機</h1><p>キーボード入力対応。計算履歴は端末に保存されます。</p></div>
-        <div class="calc-layout"><div class="calculator"><div class="calc-screen"><small id="calcExpression"></small><output id="calcDisplay">0</output></div><div id="calcKeys" class="calc-keys"></div></div><div class="panel"><div class="panel-title"><h3>履歴</h3><button id="clearHistory" class="text-btn">消去</button></div><ul id="calcHistory" class="history-list"></ul></div></div>
+        <div class="tool-heading">
+          <p class="eyebrow">CALC</p>
+          <h1>計算機</h1>
+          <p>キーボード入力対応</p>
+        </div>
+        <div class="calc-layout">
+          <div class="calculator">
+            <div class="calc-screen"><small id="calcExpression"></small><output id="calcDisplay">0</output></div>
+            <div id="calcKeys" class="calc-keys"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-title">
+              <h3>履歴</h3><button id="clearHistory" class="text-btn">消去</button>
+            </div>
+            <ul id="calcHistory" class="history-list"></ul>
+          </div>
+        </div>
       </section>
 
       <section id="focus" class="view tool-view">
-        <div class="tool-heading"><p class="eyebrow">POMODORO</p><h1>集中タイマー</h1><p>短く集中し、きちんと休む。反復しやすい25分設計です。</p></div>
-        <div class="focus-wrap"><div class="focus-ring"><svg viewBox="0 0 220 220"><circle class="ring-bg" cx="110" cy="110" r="96"/><circle id="focusRing" class="ring-value" cx="110" cy="110" r="96"/></svg><div><span id="focusMode">FOCUS</span><strong id="focusTime">25:00</strong></div></div><div class="mode-tabs"><button class="active" data-min="25" data-mode="FOCUS">集中 25分</button><button data-min="5" data-mode="BREAK">休憩 5分</button><button data-min="15" data-mode="LONG BREAK">長い休憩 15分</button></div><div class="button-row center"><button id="focusStart" class="primary">スタート</button><button id="focusReset">リセット</button></div></div>
+        <div class="tool-heading">
+          <p class="eyebrow">POMODORO</p>
+          <h1>タイマー</h1>
+          <p>25m、5m、15mの3択</p>
+        </div>
+        <div class="focus-wrap">
+          <div class="focus-ring"><svg viewBox="0 0 220 220">
+              <circle class="ring-bg" cx="110" cy="110" r="96" />
+              <circle id="focusRing" class="ring-value" cx="110" cy="110" r="96" />
+            </svg>
+            <div><span id="focusMode">FOCUS</span><strong id="focusTime">25:00</strong></div>
+          </div>
+          <div class="mode-tabs"><button class="active" data-min="25" data-mode="FOCUS">集中して作業 25分</button><button
+              data-min="5" data-mode="BREAK">一旦休憩する 5分</button><button data-min="15" data-mode="LONG BREAK">長い休憩
+              15分</button></div>
+          <div class="button-row center"><button id="focusStart" class="primary">スタート</button><button
+              id="focusReset">リセット</button></div>
+        </div>
       </section>
     </main>
   </div>
-  <footer>STUDY DESK <span>•</span> DATA STAYS IN YOUR BROWSER</footer>
+  <footer>Kawamukai Page</footer>
   <script src="assets/app.js"></script>
 </body>
+
 </html>
